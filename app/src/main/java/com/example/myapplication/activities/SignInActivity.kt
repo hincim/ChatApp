@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivitySignInBinding
 import com.google.firebase.firestore.FirebaseFirestore
-import java.util.Objects
 
 class SignInActivity : AppCompatActivity() {
 
@@ -23,7 +21,8 @@ class SignInActivity : AppCompatActivity() {
 
     private fun setListeners(){
         binding.textCreateNewAccount.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this,SignUpActivity::class.java))
+            startActivity(Intent(this,
+                SignUpActivity::class.java))
         })
 
         binding.buttonSignIn.setOnClickListener { v -> addDataToFirestore() }
