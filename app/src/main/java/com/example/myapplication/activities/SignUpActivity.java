@@ -151,4 +151,7 @@ public class SignUpActivity extends AppCompatActivity {
             binding.buttonSignUp.setVisibility(View.VISIBLE);
         }
     }
+
+
+
 }
