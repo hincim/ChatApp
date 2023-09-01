@@ -1,10 +1,12 @@
 package com.example.myapplication.models
 
 import java.time.chrono.ChronoLocalDateTime
+import java.util.Date
 
 data class ChatMessage(
-    val senderId:String,
-    val receiverId:String,
-    val message: String,
-    val dateTime: String
+    var senderId:String? = "",
+    var receiverId:String? = "",
+    var message: String? = "",
+    var dateTime: String? = "",
+    var dateObject: Date? = Date()
 )
