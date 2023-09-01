@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.models.User
 import com.example.myapplication.utilities.Constants
 import com.example.myapplication.utilities.PreferenceManager
 import com.google.firebase.firestore.FieldValue
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
     private fun setListeners(){
         binding.imageSignOut.setOnClickListener {
             signOut()
+        }
+
+        binding.fabNewChat.setOnClickListener {
+            startActivity(Intent(this,UsersActivity::class.java))
         }
     }
 
@@ -54,9 +59,6 @@ class MainActivity : AppCompatActivity() {
             preferenceManager.getString(Constants.KEY_USER_ID)
         )
         documentReference.update(Constants.KEY_FCM_TOKEN, token)
-            .addOnSuccessListener {
-                showToast("Token updated successfully")
-            }
             .addOnFailureListener {
                 showToast("Unable to update token")
             }
