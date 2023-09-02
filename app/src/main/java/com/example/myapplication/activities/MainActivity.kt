@@ -137,6 +137,7 @@ class MainActivity : BaseActivity(), ConversionListener {
 
 
     private fun updateToken(token: String){
+        preferenceManager.putString(Constants.KEY_FCM_TOKEN, token)
         val db = FirebaseFirestore.getInstance()
         val documentReference = db.collection(Constants.KEY_COLLECTION_USERS).document(
             preferenceManager.getString(Constants.KEY_USER_ID)
