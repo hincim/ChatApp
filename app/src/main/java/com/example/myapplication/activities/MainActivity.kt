@@ -5,7 +5,6 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.adapters.RecentConversationsAdapter
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.listeners.ConversionListener
@@ -23,7 +22,7 @@ import com.google.firebase.messaging.FirebaseMessaging
 import java.util.Collections
 import java.util.Date
 
-class MainActivity : AppCompatActivity(), ConversionListener {
+class MainActivity : BaseActivity(), ConversionListener {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var preferenceManager: PreferenceManager
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity(), ConversionListener {
     }
 
     private fun init(){
-        conversations = mutableListOf()
+        conversations = ArrayList()
         conversationsAdapter = RecentConversationsAdapter(conversations, this)
         binding.conversationsRecyclerView.adapter = conversationsAdapter
         database = FirebaseFirestore.getInstance()

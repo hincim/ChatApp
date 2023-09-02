@@ -1,13 +1,11 @@
 package com.example.myapplication.activities;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.myapplication.R;
 import com.example.myapplication.adapters.UsersAdapter;
 import com.example.myapplication.databinding.ActivityUsersBinding;
 import com.example.myapplication.listeners.UserListener;
@@ -20,7 +18,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersActivity extends AppCompatActivity implements UserListener {
+public class UsersActivity extends BaseActivity implements UserListener {
 
     private ActivityUsersBinding binding;
     private PreferenceManager preferenceManager;
