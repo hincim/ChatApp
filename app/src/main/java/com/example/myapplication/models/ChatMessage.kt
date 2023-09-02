@@ -8,5 +8,8 @@ data class ChatMessage(
     var receiverId:String? = "",
     var message: String? = "",
     var dateTime: String? = "",
-    var dateObject: Date? = Date()
+    var dateObject: Date? = Date(),
+    var conversionId: String? = "",
+    var conversionName: String? = "",
+    var conversionImage: String? = "",
 )
