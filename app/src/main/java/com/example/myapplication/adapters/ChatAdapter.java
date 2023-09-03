@@ -13,6 +13,7 @@ import com.example.myapplication.databinding.ItemContainerUserBinding;
 import com.example.myapplication.models.ChatMessage;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -59,7 +60,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemViewType(int position) {
-        if (chatMessages.get(position).getSenderId().equals(senderId)){
+        if (Objects.equals(chatMessages.get(position).getSenderId(), senderId)){
             return VIEW_TYPE_SENT;
         }else{
             return VIEW_TYPE_RECEIVED;

@@ -47,17 +47,17 @@ public class RecentConversationsAdapter extends RecyclerView.Adapter<RecentConve
 
     class ConversionViewHolder extends RecyclerView.ViewHolder{
 
-        ItemContainerRecentConversionBinding itemContainerRecentConversionBinding;
+        ItemContainerRecentConversionBinding binding;
         ConversionViewHolder(ItemContainerRecentConversionBinding itemContainerRecentConversionBinding){
             super(itemContainerRecentConversionBinding.getRoot());
-            this.itemContainerRecentConversionBinding = itemContainerRecentConversionBinding;
+            binding = itemContainerRecentConversionBinding;
         }
 
         void setData(ChatMessage chatMessage){
-            itemContainerRecentConversionBinding.imageProfile.setImageBitmap(getConversionImage(chatMessage.getConversionImage()));
-            itemContainerRecentConversionBinding.textName.setText(chatMessage.getConversionName());
-            itemContainerRecentConversionBinding.textRecentMessage.setText(chatMessage.getMessage());
-            itemContainerRecentConversionBinding.getRoot().setOnClickListener(v ->{
+            binding.imageProfile.setImageBitmap(getConversionImage(chatMessage.getConversionImage()));
+            binding.textName.setText(chatMessage.getConversionName());
+            binding.textRecentMessage.setText(chatMessage.getMessage());
+            binding.getRoot().setOnClickListener(v ->{
                 User user = new User();
                 user.id = chatMessage.getConversionId();
                 user.name = chatMessage.getConversionName();
